@@ -6,10 +6,10 @@ var getWeather = (location, callback) => {
 
   request({
 
-    url: `https://api.darksky.net/forecast/784024b798f89bf9b68345283aac76f6/${location.latitude}${location.longitude}`,
+    url: `https://api.darksky.net/forecast/784024b798f89bf9b68345283aac76f6/${location.latitude},${location.longitude}`,
     json: true
   }, (error, response, body) => {
-      console.log(response);
+//      console.log(response);
     if (error) {
       callback('Unable to connect to Dark Sky Servers.');
     } else if (response.statusMessage !== 'OK') {
